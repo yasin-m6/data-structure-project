@@ -71,11 +71,23 @@ void Graph::print_best_path()
     find_all_pathes("Graph_0" , path , visited , distance);
 
 
-    cout << "min dis : " << min_distance << endl << "best path : ";
+    cout << "------------------------------------------" << endl;
+    cout << "best path : ";
     for (size_t i = 0; i < best_path.size(); i++)
     {
-        cout << best_path[i] << " ";
+        cout << best_path[i];
+        if(i != best_path.size()-1)
+        {
+            cout << " -> ";
+        }
+        else
+        {
+            cout << endl;
+        }
     }
+    cout << "------------------------------------------" << endl;
+     cout << "best path distance : " << min_distance << endl;
+    cout << "------------------------------------------" << endl;
     
 }
 
@@ -86,7 +98,6 @@ void Graph::set_data()
     {
         cerr << "file does not open !!!!" << endl;
     }
-    cout << "file is open" << endl;
 
     string v_num;
     int dest_num;
